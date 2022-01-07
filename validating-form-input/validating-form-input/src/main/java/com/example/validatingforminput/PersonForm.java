@@ -11,7 +11,7 @@ public class PersonForm {
     private String name;
 
     @NotNull
-    @Min(18)
+    @Min(19)
     private Integer age;
 
     public String getName() {
