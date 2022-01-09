@@ -1,0 +1,2 @@
+Went through Stacks, arrays and Queues for the weekend. 
+Will start CTCI nect weekend.
