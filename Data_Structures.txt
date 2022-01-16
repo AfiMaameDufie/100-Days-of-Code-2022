@@ -1,2 +1,32 @@
-Went through Stacks, arrays and Queues for the weekend. 
+Went through Stacks, arrays and Queues for the weekend.
 Will start CTCI nect weekend.
+
+Question 1 (Panagram):  Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan gramma, "every letter") is a sentence using every letter of the alphabet at least once. E.g. "The quick brown fox jumps over the lazy dog" is a panagram
+# Test:is_pangram("the quick brown fox jumps over the lazy dog") == True,
+#   is_pangram("a quick movement of the enemy will jeopardize five gunboats") == False,
+#   is_pangram('"Five quacking Zephyrs jolt my wax bed."') == True,
+#   is_pangram("bcdefghijklmnopqrstuvwxyz") == False
+
+def is_pangram(sentence) :
+
+  sentence = sentence.lower()
+
+  for letter in 'abcdefghijklmnopqrstuvwxyz' :
+    if letter not in sentence :
+      return False
+  return True
+
+
+# Question 3 (Leap Year): Given a year, report if it is a leap year.
+# Tips: on every year that is evenly divisible by 4, except every year that is evenly divisible by 100, unless the year is also evenly divisible by 400
+# For example, 1997 is not a leap year, but 1996 is. 1900 is not a leap year, but 2000 is.
+# Test:(leap_year(2015) == False
+# (leap_year(1996) == True
+# (leap_year(1800) == False
+# (leap_year(2000) == True
+
+
+def leaf_year(year) :
+  if year % 4 and (year % 400 != 0 or year % 100 == 0):
+    return True
+  return False
