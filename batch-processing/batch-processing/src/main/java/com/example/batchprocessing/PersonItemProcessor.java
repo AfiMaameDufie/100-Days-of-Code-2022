@@ -22,4 +22,3 @@ public class PersonItemProcessor implements ItemProcessor<Personc, Personc> {
     }
 
 }
-}
