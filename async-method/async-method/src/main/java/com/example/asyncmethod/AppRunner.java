@@ -23,9 +23,9 @@ public class AppRunner implements CommandLineRunner {
         long Start = System.currentTimeMillis();
 
         //Start the async lookups
-        CompletableFuture<User> page1 = githubLookupService.findUser("AfiMaameDufie");
+        CompletableFuture<User> page1 = githubLookupService.findUser("PivotalSoftware");
         CompletableFuture<User> page2 = githubLookupService.findUser("CloudFoundry");
-        CompletableFuture<User> page3 = githubLookupService.findUser("Spring-User");
+        CompletableFuture<User> page3 = githubLookupService.findUser("Spring-Projects");
 
         //wait till the lookups are done
         CompletableFuture.allOf(page1,page2,page3).join();
