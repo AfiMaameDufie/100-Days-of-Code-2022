@@ -80,4 +80,38 @@ When it comes to element lookup, lists perform much better than linked lists. Wh
 Trying to do the same with a linked list would take O(n) because you need to traverse the whole list to find the element.
 
 When searching for a specific element, however, both lists and linked lists perform very similarly, with a time complexity of O(n).
-In both cases, you need to iterate through the entire list to find the element you’re looking for
+In both cases, you need to iterate through the entire list to find the element you’re looking for.
+
+Time Complexity :
+*Access O(n)
+*Search O(n)
+*Insert O(1)
+*Remove O(1)
+
+
+#Saturday:
+Today,I will be focusing on Stacks and Queues
+
+A stack is a collection of elements with two key operations : push which adds to a collection and pop which removes
+the last recent element.
+
+It operates based on LIFO
+Like Pringles
+
+Time Complexity:
+*Access: O(n)
+*Search: O(n)
+*Insert: O(1)
+*Remove: O(1)
+
+Queues
+
+A queue is a collection of elements that has two operations like Stacks. For queues, we enqueue to add to an element
+to a queue and dequeue to remove from a queue.
+It operates on the FIFO principle. Like queueing in a banking hall
+
+Time Complexity:
+*Access: O(n)
+*Search: O(n)
+*Insert: O(1)
+*Remove: O(1)
