@@ -31,7 +31,7 @@ public class AppRunner implements CommandLineRunner {
         CompletableFuture.allOf(page1,page2,page3).join();
 
         //Display results
-        logger.info("Time used: " + (System.currentTimeMillis() - Start));
+        logger.info("Time used: " + (System.currentTimeMillis() - start));
         logger.info("----" + page1.get());
         logger.info("----" + page2.get());
         logger.info("----" + page3.get());
