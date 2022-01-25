@@ -46,3 +46,29 @@ Any customization tends to happen in the voters, either by adding new ones or mo
 
 It is very common to use ConfigAttributes that are Spring Expression Language (SpEL) expressions — for example, isFullyAuthenticated() && hasRole('user').
 This is supported by an AccessDecisionVoter that can handle the expressions and create a context for them. To extend the range of expressions that can be handled requires a custom implementation of SecurityExpressionRoot and sometimes also SecurityExpressionHandler.
+
+Authentication Mechanisms
+Username and Password - how to authenticate with a username/password
+
+OAuth 2.0 Login - OAuth 2.0 Log In with OpenID Connect and non-standard OAuth 2.0 Login (i.e. GitHub)
+
+SAML 2.0 Login - SAML 2.0 Log In
+
+Central Authentication Server (CAS) - Central Authentication Server (CAS) Support
+
+Remember Me - how to remember a user past session expiration
+
+JAAS Authentication - authenticate with JAAS
+
+OpenID - OpenID Authentication (not to be confused with OpenID Connect)
+
+Pre-Authentication Scenarios - authenticate with an external mechanism such as SiteMinder or Java EE security but still use Spring Security for authorization and protection against common exploits.
+
+X509 Authentication - X509 Authentication
+
+SecurityContext context = SecurityContextHolder.createEmptyContext();
+Authentication authentication =
+    new TestingAuthenticationToken("username", "password", "ROLE_USER");
+context.setAuthentication(authentication);
+
+SecurityContextHolder.setContext(context);
