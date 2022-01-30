@@ -181,3 +181,19 @@ Time Complexity:
 Best Case: O(nlog(n))
 Worst Case: O(n^2)
 Average Case: O(nlog(n))
+
+Mergesort
+Mergesort is also a divide and conquer algorithm. It continuously divides an array into two halves, recurses on both the left subarray and right subarray and then merges the two sorted halves
+Stable: Yes
+Time Complexity:
+Best Case: O(nlog(n))
+Worst Case: O(nlog(n))
+Average Case: O(nlog(n))
+
+Bucket Sort
+Bucket Sort is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm
+Time Complexity:
+Best Case: Ω(n + k)
+Worst Case: O(n^2)
+Average Case:Θ(n + k)
+
