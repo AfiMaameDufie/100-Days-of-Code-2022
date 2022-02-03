@@ -1,7 +1,7 @@
-This is almost the end of our shallow tour through the Spring Security and Angular stack.
+
 We have a nice architecture now with clear responsibilities in three separate components, UI/API Gateway, resource server and authorization server/token granter.
 The amount of non-business code in all layers is now minimal, and it’s easy to see where to extend and improve the implementation with more business logic.
 The next steps will be to tidy up the UI in our authorization server, and probably add some more tests, including tests on the JavaScript client.
 Another interesting task is to extract all the boiler plate code and put it in a library (e.g. "spring-security-angular") containing Spring Security and Spring Session autoconfiguration and some webjars resources for the navigation controller in the Angular piece.
 Having read the sections in this series, anyone who was hoping to learn the inner workings of either Angular or Spring Security will probably be disappointed, but if you wanted to see how they can work well together and how a little bit of configuration can go a long way, then hopefully you will have had a good experience.
-Spring Cloud is new and these samples required snapshots when they were written, but there are release candidates available and a GA release coming soon, so check it out and send some feedback via Github or gitter.im.
+Spring Cloud is new and these samples required snapshots when they were written, but there are release candidates available and a GA release coming soon, so check it out and send some feedback via Github or gitter.
