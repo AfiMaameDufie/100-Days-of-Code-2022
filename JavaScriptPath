@@ -5,4 +5,6 @@ Variables : var afi;
 assignment operators : var a = 5 ;
 String operators : var myName = "afi";
 
+assignment operators, multi assignment, use of let, var and const
+
 */
