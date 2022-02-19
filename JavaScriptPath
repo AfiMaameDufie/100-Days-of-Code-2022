@@ -1,6 +1,8 @@
 /*
 
 Comments  : // , /**/
+
+/*
 Variables : var afi;
 assignment operators : var a = 5 ;
 String operators : var myName = "afi";
@@ -84,5 +86,86 @@ function abTest(a, b) {
 }
 
 abTest(2,2);
+
+
+Counting cards
+let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+  switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+  if (count > 0) {
+    return count + " Bet";
+  } else {
+    return count + " Hold";
+  }
+}
+
+
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+const hatValue = testObj.hat;      
+const shirtValue = testObj.shirt;
+
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+var entreeValue = testObj["an entree"];   
+var drinkValue = testObj["the drink"];  
+
+
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line
+myDog.name="Happy Coder";
+
+
+function phoneticLookup(val) {
+  let result = "";
+
+  // Only change code below this line
+  var lookup = {
+    "alpha" : "Adams",
+    "bravo": "Boston",
+    "charlie" : "Chicago",
+    "delta" : "Denver",
+    "echo" : "Easy",
+    "foxtrot" : "Frank"
+  };
+
+ result = lookup[val];
+
+  return result;
+}
+
+phoneticLookup("charlie");
 
 */
