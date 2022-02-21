@@ -199,4 +199,84 @@ const myPlants = [
 
 const secondTree = myPlants[1].list[1] ;
 
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (value === '') {
+    delete records[id][prop];
+  } else if (prop === 'tracks') {
+    records[id][prop] = records[id][prop] || []; // this is called shortcircuit evaluation, see below for explanation
+    records[id][prop].push(value);
+  } else {
+    records[id][prop] = value;
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+const ourArray = [];
+
+for (let i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+const arr = [10, 9, 8, 7, 6];
+
+for (let i = 0; i < arr.length; i++) {
+   console.log(arr[i]);
+}
+
+// Setup
+const myArr = [2, 3, 4, 5, 6];
+var total = 0;
+// Only change code below this line
+
+for (let n = 0; n < myArr.length; n++) {
+  total += myArr[n];
+}
+
+function multiplyAll(arr) {
+  let product = 1;
+  // Only change code below this line
+   for (let i = 0; i < arr.length; i++) {
+     for (let j = 0; j < arr[i].length; j++) {
+       product = product * arr[i][j];
+     }
+   }
+  // Only change code above this line
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+// Setup
+const myArray = [];
+let i = 10;
+
+do {
+  myArray.push(i);
+  i++;
+  console.log(myArray)
+} while (i < 10);
+
 */
