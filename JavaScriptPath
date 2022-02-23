@@ -345,4 +345,60 @@ function randomWholeNum() {
   return Math.floor(Math.random()* 10);
 }
 
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+ 
+}
+
+function convertToInteger(str) {
+  return parseInt(str);
+
+}
+
+convertToInteger("56");
+
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+
+convertToInteger("10011");
+
+function checkEqual(a, b) {
+  return a == b ? "Equal" : "Not Equal";
+
+}
+
+checkEqual(1, 2);
+
+function checkSign(num) {
+  return (num == 0) ? "zero" : (num < 0) ? "negative" : "positive";
+
+}
+
+checkSign(10);
+
+
+// Only change code below this line
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+
+}
+
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum === endNum) {
+    return [startNum];
+  } else {
+    var nums = rangeOfNumbers(startNum, endNum - 1);
+    nums.push(endNum);
+    return nums;
+  }
+
+};
 */
