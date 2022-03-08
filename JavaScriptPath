@@ -823,4 +823,47 @@ let result = sample.match(countNonWhiteSpace);
 let ohStr = "Ohhh no";
 let ohRegex = /Oh{3,6}\sno/; // Change this line
 let result = ohRegex.test(ohStr);
+
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // Change this line
+let result = movieName.match(noNumRegex).length;
+
+
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; 
+let result = haRegex.test(haStr);
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; 
+let result = timRegex.test(timStr);
+
+let favWord = "favorite";
+let favRegex = /favou?rite/; 
+let result = favRegex.test(favWord);
+
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6})(?=\w*\d{2})/; 
+let result = pwRegex.test(sampleWord);
+
+let myString = "Eleanor Roosevelt";
+let myRegex = /(Eleanor|Franklin).*Roosevelt/; 
+let result = myRegex.test(myString); 
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Change this line
+let result = reRegex.test(repeatNum);
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result = str.replace(fixRegex, replaceText);
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s|\s+$/g; 
+let result = hello; 
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; 
+let result = hello.replace(wsRegex, ""); 
+
 */
