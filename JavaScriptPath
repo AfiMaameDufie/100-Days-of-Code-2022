@@ -1008,4 +1008,113 @@ arr.splice(1,4)
 // Only change code above this line
 console.log(arr);
 
+function findElement(arr, func) {
+//   let num = 0;
+//   for(let i=0; i < arr.length; i++){
+//     num = arr[i];
+//     if(func(num)){
+//        return num ;
+//     }
+//   }
+//   return undefined
+// }
+
+return arr.find(func);
+}
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+
+
+function booWho(bool) {
+  // return bool === true ? true : false;
+  return typeof bool === "boolean";
+}
+
+booWho(null);
+
+
+function titleCase(str) {
+  return str
+  .toLowerCase()
+  .split(" ")
+  .map(val => val.replace(val.charAt(0), val.charAt(0).toUpperCase()))
+  .join(" ");
+}
+
+titleCase("I'm a little tea pot");
+
+
+
+function frankenSplice(arr1, arr2, n) {
+  let localArr = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    localArr.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return localArr;
+}
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+
+
+
+function bouncer(arr) {
+  return arr.filter(Boolean);
+}
+
+bouncer([7, "ate", "", false, 9]);
+
+
+
+
+
+function getIndexToIns(arr, num) {
+ arr.sort((a,b) => a - b);
+
+ for(let i = 0; i < arr.length; i++) {
+   if(arr[i] >= num){
+     return i;
+   }
+ }
+ 
+ 
+  return arr.length;
+}
+
+getIndexToIns([40, 60], 50);
+
+
+
+
+
+
+
+
+
+
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function(letter) {
+      return arr[0].toLowerCase().indexOf(letter) != -1;
+    });
+}
+
+mutation(["hello", "hey"]);
+
+
+
+function chunkArrayInGroups(arr, size) {
+  let newArr = [];
+  while (arr.length > 0) {
+    newArr.push(arr.splice(0, size));
+  }
+  
+  return newArr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
 */
