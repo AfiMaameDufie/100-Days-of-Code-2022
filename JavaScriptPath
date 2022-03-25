@@ -2241,6 +2241,30 @@ checkPositive([1, 2, 3, -4, 5]);
 
 The arity of a function is the number of arguments it requires. Currying a function means to convert a function of N arity into N functions of arity 1.
 
+function sumAll(arr) {
+  const [first,last] = [...arr].sort((a,b) => a-b);
+  return first !== last
+    ? first + sumAll([first+1, last])
+    :first;
+}
+
+sumAll([1, 4]);
+
+
+function diffArray(arr1, arr2) {
+  return arr1
+  .concat(arr2)
+  .filter(item => !arr1.includes(item) || !arr2.includes(item));
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+
+function destroyer(arr,...valsToRemove) {
+  return arr.filter(elem => !valsToRemove.includes(elem))
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 
 */
