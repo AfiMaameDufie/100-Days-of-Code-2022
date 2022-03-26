@@ -2266,5 +2266,28 @@ function destroyer(arr,...valsToRemove) {
 
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
+function whatIsInAName(collection, source) {
+  // const arr = [];
+  // Only change code below this line
+  const sourceKeys = Object.keys(source);
 
+  // filter the collection
+  return collection.filter(obj => sourceKeys
+      .map(key => obj.hasOwnProperty(key) && obj[key] === source[key])
+      .reduce((a, b) => a && b));
+
+  // Only change code above this line
+  // return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+function spinalCase(str) {
+  return str
+    .split(/\s|_|(?=[A-Z])/)
+    .join("-")
+    .toLowerCase();
+}
+
+spinalCase('This Is Spinal Tap');
 */
