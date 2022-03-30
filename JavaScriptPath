@@ -2560,5 +2560,107 @@ function orbitalPeriod(arr) {
 
 orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
+function palindrome(str) {
+  // assign the string being passed in to clean string
+  const clean_str = str
+
+    //transform to lower case
+    .toLowerCase()
+
+    // perform a match using regex
+    .match(/[a-z0-9]/g);
+
+  //return the clean string which is checked with reverse and the strict equality sign
+
+  return clean_str.join('') ===
+    clean_str.reverse().join('');
+}
+
+palindrome("eye");
+
+
+
+function convertToRoman(num) {
+  var roman = "";
+
+  var values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  var literals = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+
+
+  for (let i = 0; i < values.length; i++) {
+    if (num >= values[i]) {
+      if (5 <= num && num <= 8) num -= 5;
+      else if (1 <= num && num <= 3) num -= 1;
+      else num -= values[i];
+      roman += literals[i];
+      i--;
+    }
+  }
+
+
+  return roman;
+}
+
+convertToRoman(36);
+
+
+
+function telephoneCheck(str) {
+  //   1- ^ beginning of the string.
+  //   2- (1\s?)? allows for "1" or "1 " if there is one.
+  //   3- \d{n} checks for exactly n number of digits so \d{3}
+  //   checks for three digits
+  //   4. - x|y checks for either x or y so (\(\d{3}\)|\d{3}
+  //   checks for either three digits surrounded by parentheses or three digits by themselves with no parentheses
+  //   5. [\s\-]? checks for spaces or dashes between the groups of digits.
+  //   6. $ end of the string
+
+  const regex = /^(1\s?)?(\d{3}|\(\d{3}\))[\s\-]?\d{3}[\s\-]?\d{4}$/
+  return regex.test(str)
+}
+
+telephoneCheck("555-555-5555");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function rot13(str) {
+  let charCode = 0;
+  let strArr = [];
+  strArr = str.split(""); // split the string into array
+
+  for (let i = 0; i < strArr.length; i++) {
+    charCode = strArr[i].charCodeAt();
+    if (charCode >= 65 && charCode <= 90) {
+      if (charCode > 77) {
+        charCode = charCode - 13;
+      } else {
+        charCode = charCode + 13;
+      }
+
+      strArr.splice(i, 1, String.fromCharCode(charCode));
+    }
+  }
+
+  return strArr.join('');
+}
+
+rot13("SERR PBQR PNZC");
+
+
 
 */
