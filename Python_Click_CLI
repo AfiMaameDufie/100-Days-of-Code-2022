@@ -6,5 +6,23 @@ If you read my previous articles, especially the Progress and Not Perfection, yo
 
 However, things took a little detour and I find myself dabbling in Python and Flask most times.
 Turning 180 degrees, we will be taking a look at the Python Click Command.
+ 
+Click is a Python package that provides an awesome and neat way of creating Command Line Interfaces with minimal code.
+
+With Click, there are three main super cool things you can do.
+
+*You can nest commands
+*You can create your own help page (--help)
+*Lazily loads subcommands during runtime
+
+Let's see an example, shall we?
+
+To start off, we have to import the Click Python package in order to use it.
+
+import Click
+
+Then
+
+
 
 //draft
