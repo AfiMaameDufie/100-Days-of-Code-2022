@@ -51,7 +51,7 @@ import click
 def hello():
     click.echo('Hello World!')
 
-    What’s happening is that the decorator converts the function into a Command which then can be invoked:
+    At this point, the decorator converts the function into a Command which then can be invoked:
 
 if __name__ == '__main__':
     hello()
