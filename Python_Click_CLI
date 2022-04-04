@@ -17,12 +17,54 @@ With Click, there are three main super cool things you can do.
 
 Let's see an example, shall we?
 
-To start off, we have to import the Click Python package in order to use it.
+To write a Python Click CLI tool, 
 
-import Click
+Prerequisites:
+Have Python installed
 
-Then
+If you already have a venv setup, you can skip this part.
+
+*To setup the Virtual Environment, 
+>>> In your terminal, create a folder for the project
+>>>cd into that project 
+$ cd myproject
+$ pipenv install 
+$ pipenv install <package>
+
+Now to activate the shell
+$ pipenv shell
+$ python --version
+
+//We will install our Click package now
+$ pip install Click
+
+You can deactivate the venv with deactivate
+
+Click createsn commands using decorators.
+A decorator in Python is a function that takes another function as its argument, and returns yet another function. 
+
+A function becomes a Click command line tool by decorating it through click.command(). At its simplest, just decorating a function with this decorator will make it into a callable script:
+
+import click
+
+@click.command()
+def hello():
+    click.echo('Hello World!')
+
+    At this point, the decorator converts the function into a Command which then can be invoked:
+
+if __name__ == '__main__':
+    hello()
+
+    And what it looks like:
+    
+$ python hello.py
+Hello World!
 
 
+$ python hello.py --help
+Usage: hello.py [OPTIONS]
 
+Options:
+  --help  Show this message and exit.
 //draft
