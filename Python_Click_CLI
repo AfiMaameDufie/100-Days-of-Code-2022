@@ -67,4 +67,6 @@ Usage: hello.py [OPTIONS]
 
 Options:
   --help  Show this message and exit.
+
+  https://click.palletsprojects.com/en/7.x/quickstart/
 //draft
