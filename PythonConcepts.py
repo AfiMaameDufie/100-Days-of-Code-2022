@@ -167,3 +167,126 @@
 #     # Output the updated hierarchical author data
 #     authors = get_authors(session)
 #     output_author_hierarchy(authors)
+
+
+Functional programming is a programming paradigm in which the primary method of computation is evaluation of functions. 
+A pure function is a function whose output value follows solely from its input values, without any observable side effects
+
+Functional code is:
+
+High level: You’re describing the result you want rather than explicitly specifying the steps required to get there. Single statements tend to be concise but pack a lot of punch.
+Transparent: The behavior of a pure function depends only on its inputs and outputs, without intermediary values. That eliminates the possibility of side effects, which facilitates debugging.
+Parallelizable: Routines that don’t cause side effects can more easily run in parallel with one another.
+
+>>> def func():
+...     print("I am function func()!")
+...
+
+>>> func()
+I am function func()!
+
+>>> another_name = func
+>>> another_name()
+I am function func()!
+
+
+>>> def func():
+...     print("I am function func()!")
+...
+
+>>> print("cat", func, 42)
+cat <function func at 0x7f81b4d29bf8> 42
+
+>>> objects = ["cat", func, 42]
+>>> objects[1]
+<function func at 0x7f81b4d29bf8>
+>>> objects[1]()
+I am function func()!
+
+>>> d = {"cat": 1, func: 2, 42: 3}
+>>> d[func]
+2
+
+When you pass a function to another function, the passed-in function sometimes is referred to as a callback because a call back to the inner function can modify the outer function’s behavior.
+
+
+Put simply: decorators wrap a function, modifying its behavior.
+
+
+
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_whee():
+    print("Whee!")
+
+
+# @timer decorator
+
+import functools
+import time
+
+def timer(func):
+    """Print the runtime of the decorated function"""
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.perf_counter()    # 1
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()      # 2
+        run_time = end_time - start_time    # 3
+        print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+    return wrapper_timer
+
+@timer
+def waste_some_time(num_times):
+    for _ in range(num_times):
+        sum([i**2 for i in range(10000)])
+
+
+
+
+ time.perf_counter() function, which does a good job of measuring time intervals
+
+
+
+ @debug
+def make_greeting(name, age=None):
+    if age is None:
+        return f"Howdy {name}!"
+    else:
+        return f"Whoa {name}! {age} already, you are growing up!"
+
+
+>>> make_greeting("Benjamin")
+Calling make_greeting('Benjamin')
+'make_greeting' returned 'Howdy Benjamin!'
+'Howdy Benjamin!'
+
+>>> make_greeting("Richard", age=112)
+Calling make_greeting('Richard', age=112)
+'make_greeting' returned 'Whoa Richard! 112 already, you are growing up!'
+'Whoa Richard! 112 already, you are growing up!'
+
+
+import math
+from decorators import debug
+
+# Apply a decorator to a standard library function
+math.factorial = debug(math.factorial)
+
+def approximate_e(terms=18):
+    return sum(1 / math.factorial(n) for n in range(terms))
+
+
+lambda
+
+>>> reverse = lambda s: s[::-1]
+>>> reverse("I am a string")
+'gnirts a ma I'
+
